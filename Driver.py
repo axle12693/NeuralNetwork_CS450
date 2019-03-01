@@ -13,14 +13,13 @@
 #     return neuron_output_layer_3
 #
 #
-#
 # print(calc([1,5]))
 
 
 import Topology
 import Network
 top = Topology.Topology()
-top.add_layer(2)
+top.add_layer(2, "Input")
 top.add_layer(2)
 top.add_layer(1)
 net = Network.Network(top)
