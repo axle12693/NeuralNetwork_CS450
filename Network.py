@@ -1,4 +1,5 @@
 import random
+import numpy as np
 
 
 class Network:
@@ -16,8 +17,12 @@ class Network:
 
         print()
     def predict(self, data):
-        for layer in self.topology.layers:
-            pass
+        next_layer_input = np.array(data)
+        for index in range(len(self.topology.layers)-1):
+            next_layer_input = np.concatenate(([-1], next_layer_input))
+            next_layer_input = np.array(self.weights[index]).dot(next_layer_input)
+            next_layer_input = self.topology.layers[index+1][0](next_layer_input)
+        return next_layer_input
 
 
 

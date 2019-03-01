@@ -23,3 +23,5 @@ top.add_layer(2, "Input")
 top.add_layer(2)
 top.add_layer(1)
 net = Network.Network(top)
+
+print(net.predict([4,5]))

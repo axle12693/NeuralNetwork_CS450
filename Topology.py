@@ -1,5 +1,5 @@
 import math
-
+import numpy as np
 
 class Topology:
     def __init__(self):
@@ -16,7 +16,7 @@ class Topology:
 
     @staticmethod
     def Sigmoid(inputs):
-        return 1 / (1 + math.exp(-inputs))
+        return 1 / (1 + np.exp(-1*inputs))
 
     @staticmethod
     def Input(data_in):
