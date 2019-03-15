@@ -78,7 +78,7 @@ class Network:
                             network_population[network_index].weights[layer_index][k_neuron_index][j_neuron_index] = random.uniform(-1.0, 1.0)
             print("Beginning the circle of life...")
             for i in range(num_epochs):
-                print("Determining fitness of population " + str(i))
+                print("Determining fitness of population " + str(i) + " which has size " + str(len(network_population)))
                 fitnesses = {}
                 min_fitness = None
                 max_fitness = None

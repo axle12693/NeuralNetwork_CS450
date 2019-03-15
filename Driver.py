@@ -42,7 +42,8 @@ top.add_layer(5)
 top.add_layer(3)
 net = Network.Network(top, learning_rate=0.01)
 
-plot_data = net.fit(x_train, y_train, x_test, y_test, 1000)
+#plot_data = net.fit(x_train, y_train, x_test, y_test, method="genetic", fitness_callback=fitness_callback)
+plot_data = net.fit(x_train, y_train, x_test, y_test, num_epochs=1000)
 
 plt.plot(plot_data[0], plot_data[1], label="Train")
 plt.plot(plot_data[0], plot_data[2], label="Test")
@@ -90,7 +91,7 @@ top.add_layer(1)
 net = Network.Network(top, 0.01)
 
 
-plot_data = net.fit(x_train, y_train, x_test, y_test, 1000)
+plot_data = net.fit(x_train, y_train, x_test, y_test, num_epochs=1000)
 plt.plot(plot_data[0], plot_data[1], label="Train")
 plt.plot(plot_data[0], plot_data[2], label="Test")
 plt.xlabel = "Iteration"
@@ -119,28 +120,29 @@ plt.show()
 #     column_mean = np.mean(column)
 #     column_std = np.std(column)
 #     x_train[index] = (column - column_mean) / column_std
-# x_train = np.transpose(x_train)
+# #x_train = np.transpose(x_train)
 # y_train = np.ndarray.tolist(y_train)
-# for i in range(len(y_train)):
-#     y_train[i] = [y_train[i]]
+# # for i in range(len(y_train)):
+# #     y_train[i] = [y_train[i]]
 #
-# x_train, x_test, y_train, y_test = train_test_split(x_train, y_train, test_size=0.99)
-# x_test, garbage, y_test, garbage = train_test_split(x_test, y_test, test_size=0.99)
+# # x_train, x_test, y_train, y_test = train_test_split(x_train, y_train, test_size=0.99)
+# # x_test, garbage, y_test, garbage = train_test_split(x_test, y_test, test_size=0.99)
 #
-# print("Creating the network...")
-# top = Topology.Topology()
-# top.add_layer(200, "Input")
-# top.add_layer(100)
-# top.add_layer(50)
-# top.add_layer(25)
-# top.add_layer(10)
-# top.add_layer(5)
-# top.add_layer(1)
-# net = Network.Network(top,0.01)
-# print("Fitting...")
-# plot_data = net.fit(x_train, y_train, x_test, y_test, 100)
-# plt.plot(plot_data[0], plot_data[1], label="Train")
-# plt.plot(plot_data[0], plot_data[2], label="Test")
+# # print("Creating the network...")
+# # top = Topology.Topology()
+# # top.add_layer(200, "Input")
+# # top.add_layer(100)
+# # top.add_layer(50)
+# # top.add_layer(25)
+# # top.add_layer(10)
+# # top.add_layer(5)
+# # top.add_layer(1)
+# # net = Network.Network(top,0.01)
+# # print("Fitting...")
+# # plot_data = net.fit(x_train, y_train, x_test, y_test, 100)
+# # plt.plot(plot_data[0], plot_data[1], label="Train")
+# # plt.plot(plot_data[0], plot_data[2], label="Test")
+# plt.plot(x_train[0], x_train[1], label="0 and 1")
 # plt.xlabel = "Iteration"
 # plt.ylabel = "Error"
 # plt.title = "Diabetes"
